@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Passwortgeschützter Bereich"
+AuthUserFile /homepages/43/d13556723/htdocs/www.vidioma.org/molle
+require user kirtop

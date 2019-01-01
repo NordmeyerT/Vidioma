@@ -1,0 +1,55 @@
+<a href="#/tiles" class="info-tile button green">
+		<p class="info-tile button green">Start</p>
+</a>
+
+<div ng-controller="LanguageController" class="info-tile"  style="clear:left;">
+ <div class="info-heading">Idioma</div>
+  <div ng-repeat="lang in LanguageController.getLanguageList()">
+    <div ng-click="LanguageController.selectLanguage(lang.id)">
+    	<div class="lang-table lang-table-state">
+    		<div ng-show="lang.selected">></div>
+    		<div ng-show="!lang.selected">&nbsp;</div>
+    	</div>
+    	<div class="lang-table lang-table-flag">
+		    <img ng-src="{{lang.flagUrl}}" height="12px"
+		    	title="{{lang.name}}"></img>
+	    </div>
+		<div class="lang-table lang-table-label">
+			{{lang.name}}
+		</div>
+		<a class="lang-table last-item"
+			href="#tiles"
+			ng-show="lang.selected"
+			ng-click="TileController.up()"
+			>
+		 	<img class="img-overlay" height="12px" width="12px" style="margin:2px;"
+	 			src="img/ok.png" title="go!" alt="go!"
+	 			></img>
+       </a>
+	</div>
+  </div>
+</div>
+
+<div class="info-tile">
+	<div class="info-heading">Impressum</div>
+	Thomas Nordmeyer<br>
+	Europaring 25 <br>
+	D-65824 Schwalbach<br>
+	<a href="mailto:Info@vidioma.org">Info@vidioma.org</a><br>
+</div>
+
+<div class="info-tile">
+	<div class="info-heading">Licence</div>
+	Free to use.<br>
+	Free to copy.<br>
+	Please give us feedback.
+</div>
+<div class="info-tile">
+	<div class="info-heading">Tech</div>
+	<a href="http://angularjs.org" target="blank">Using Google's Angular JS'</a> <br>
+	<a href="http://dict.leo.org" target="blank">Sounds from Leo</a><br>
+	<a href="http://www.axialis.com/free/icons" target="blank">Icons</a> by <a href="http://www.axialis.com" target="blank">Axialis Team</a><br>
+	<br>
+	<a href="download/vidioma.zip">Download Vidioma </a><br>
+</div>
+

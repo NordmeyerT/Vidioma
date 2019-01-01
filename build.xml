@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="www.vidioma.org" default="zip" basedir=".">
+	<property file="build.properties"/>
+
+	<taskdef name="ftp"
+	         classname="org.apache.tools.ant.taskdefs.optional.net.FTP">
+	  <classpath>
+	    <pathelement location="${basedir}/lib/commons-net-2.0.jar"/>
+	  </classpath>
+	</taskdef>
+
+	<target name="upload" >
+		<ftp server="${ftp.host}"
+				userid="${ftp.user}" password="${ftp.pw}"
+				remotedir="${ftp.folder}" passive="true">
+			<fileset dir="WebContent" includes="**/*"/>
+		</ftp>
+	</target>
+
+	<target name="zip">
+		<delete file="WebContent/download/vidioma.zip"/>
+		<zip destfile="WebContent/download/vidioma.zip">
+			<fileset dir="WebContent" >
+			</fileset>
+		</zip>
+	</target>
+
+</project>

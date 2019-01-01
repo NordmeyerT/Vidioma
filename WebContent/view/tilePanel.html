@@ -1,0 +1,27 @@
+<div
+	style="min-height:34px;width:100%"
+	ng-controller="TileController"
+	ng-init="TileController.init()"
+	>
+	<div class="title-item"
+ 		ng-show="!TileController.isRandom"
+		ng-click="TileController.up()"
+		>
+	 	<img class="img-overlay" height="30px" width="30px" style="margin:2px;"
+ 			src="img/left.png"
+ 			></img>
+    </div>
+
+	<div class="title-item"
+		ng-show="TileController.isRandom"
+		ng-click="TileController.populate()"
+		>
+	 	<img class="img-overlay" height="30px" width="30px" style="margin:2px;"
+ 			src="img/refresh.png"
+ 			></img>
+      </div>
+
+	<div ng-repeat="item in TileController.getItemList()">
+		<div tile item="item"></div>
+	</div>
+</div>

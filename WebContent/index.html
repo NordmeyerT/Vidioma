@@ -1,0 +1,47 @@
+<html ng-app="app">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- Fixed navbar -->
+    <div class="titlebar" ng-controller="LanguageController">
+	    <img ng-src="{{language.flagUrl}}" width="24px" class="title-item"
+			    	title="{{language.name}}"/>
+    	<div menu url="#/home" img="home"></div>
+    	<div menu url="#/tiles" img="ordered"></div>
+    	<div menu url="#/tiles?random=true" img="random"></div>
+    </div>
+
+	<div ng-view style="overflow:hidden;"></div>
+
+	<audio controls id="audio" style="display:none">
+		<source src="" type="audio/mpeg">
+	</audio>
+
+	<script data-main="js/main" src="js/lib/require.js"></script>
+<!--
+ 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
+
+	<script src="js/ui-bootstrap-0.6.0.min.js"></script>
+	<script src="js/app.js"></script>
+
+    <script src="js/services/LanguageService.js"></script>
+    <script src="js/services/WordService.js"></script>
+    <script src="js/services/AudioService.js"></script>
+    <script src="js/services/CsvService.js"></script>
+    <script src="js/controller/HomeController.js"></script>
+    <script src="js/controller/LanguageController.js"></script>
+    <script src="js/controller/TileController.js"></script>
+    <script src="js/controller/HomeController.js"></script>
+    <script src="js/directives/tile.js"></script>
+    <script src="js/directives/menu.js"></script>
+ -->
+</body>
+</html>

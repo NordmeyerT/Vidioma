@@ -1,0 +1,37 @@
+<div class="tile">
+
+<img class="tile-img"
+	width="100px"
+	height="100px"
+	ng-src="{{item.pic}}"
+	ng-click="play(item)"
+	title="{{item.word}}"
+	></img>
+
+<img class="img-overlay tile-img-sound"
+	width="30px"
+	ng-src="img/play.png"
+	ng-click="play(item)"
+	ng-show ="item.sound"
+	title="{{item.word}}"
+	></img>
+
+<img class="img-overlay tile-img-down"
+	width="30px"
+	height="30px"
+	ng-src="img/right.png"
+	ng-show="item.hasChildren"
+	ng-click="down(item)"
+	></img>
+
+<img class="img-overlay tile-img-en"
+	width="30px"
+	ng-src="img/en.png"
+	ng-click="playEn(item)"
+	ng-show ="item && item.soundEn && showEn()"
+	title="{{item.wordEn}}"
+	></img>
+
+
+	<div class="tile-word">{{item.word}}</div>
+</div>
